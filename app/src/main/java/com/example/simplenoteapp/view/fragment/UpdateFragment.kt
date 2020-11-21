@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.simplenoteapp.R
 import com.example.simplenoteapp.model.dbmodel.NoteModel
+import com.example.simplenoteapp.util.validateNoteCreate
 import com.example.simplenoteapp.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -70,22 +72,31 @@ class UpdateFragment : Fragment() {
             val updatedDate = formatter.format(date)
             val noteId = noteModel.noteId
             val noteDate = noteModel.createDate
-            val noteModel = NoteModel(
-                noteId,
-                noteTitle,
-                noteDescription,
-                noteDate,
-                true,
-                noteImageUrl,
-                updatedDate
-            )
-            homeViewModel.updateNote(noteModel)
 
-            if (rootView != null) {
-                Navigation.findNavController(rootView)
-                    .navigate(R.id.action_updateFragment_to_mainFragment)
+            val credentialCheck = validateNoteCreate(noteTitle, noteDescription)
+            if (credentialCheck) {
+                val noteModel = NoteModel(
+                    noteId,
+                    noteTitle,
+                    noteDescription,
+                    noteDate,
+                    true,
+                    noteImageUrl,
+                    updatedDate
+                )
+                homeViewModel.updateNote(noteModel)
+
+                if (rootView != null) {
+                    Navigation.findNavController(rootView)
+                        .navigate(R.id.action_updateFragment_to_mainFragment)
+                }
+            } else {
+                Toast.makeText(
+                    this.context,
+                    "Title and Note Description must not be empty, please check the entries.",
+                    Toast.LENGTH_LONG
+                ).show()
             }
-
         }
     }
 }

@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.simplenoteapp.R
 import com.example.simplenoteapp.model.dbmodel.NoteModel
+import com.example.simplenoteapp.util.validateNoteCreate
 import com.example.simplenoteapp.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.fragment_create_note.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,20 +37,28 @@ class CreateNoteFragment : Fragment() {
             val date = Calendar.getInstance().time
             val formatter = SimpleDateFormat.getDateTimeInstance()
             val formatedDate = formatter.format(date)
+            val credentialCheck = validateNoteCreate(noteTitle, noteDescription)
+            if (credentialCheck) {
+                val noteModel = NoteModel(
+                    null,
+                    noteTitle,
+                    noteDescription,
+                    formatedDate,
+                    false,
+                    noteImageUrl,
+                    null
+                )
+                createNote(noteModel)
 
-            val noteModel = NoteModel(
-                null,
-                noteTitle,
-                noteDescription,
-                formatedDate,
-                false,
-                noteImageUrl,
-                null
-            )
-            createNote(noteModel)
-
-            Navigation.findNavController(rootView)
-                .navigate(R.id.action_createNoteFragment_to_mainFragment)
+                Navigation.findNavController(rootView)
+                    .navigate(R.id.action_createNoteFragment_to_mainFragment)
+            } else {
+                Toast.makeText(
+                    this.context,
+                    "Title and Note Description must not be empty, please check the entries.",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
         return rootView
     }
