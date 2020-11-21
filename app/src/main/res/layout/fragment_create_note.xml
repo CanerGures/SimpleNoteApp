@@ -137,7 +137,7 @@
             app:layout_constraintGuide_percent=".3" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/noteDelete"
+            android:id="@+id/noteAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="86dp"

@@ -38,9 +38,17 @@ class NoteRecyclerViewAdapter(val notes: MutableList<NoteModel> = mutableListOf(
             .fitCenter()
             .into(holder.noteImage)
 
+        itemClick(holder)
+
     }
 
     override fun getItemCount(): Int {
         return notes.size
+    }
+
+    private fun itemClick(holder: NotesViewHolder) {
+        holder.itemView.setOnClickListener {
+
+        }
     }
 }
