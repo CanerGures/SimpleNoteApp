@@ -12,4 +12,8 @@
     <string name="note_image_url">Image Url</string>
     <string name="delete">DELETE</string>
     <string name="add_note">add Note</string>
+    <string name="update_note">Update</string>
+    <string name="delete_note">Delete</string>
+    <string name="updated_on">Updated on:</string>
+    <string name="info_icon">infoIcon</string>
 </resources>

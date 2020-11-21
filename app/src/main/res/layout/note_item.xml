@@ -28,6 +28,43 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/noteUpdatedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/date_example"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noteDate" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/noteUpdatedDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/updated_on"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/noteUpdatedDate"
+            app:layout_constraintTop_toBottomOf="@id/noteDate" />
+
+        <ImageView
+            android:id="@+id/infoIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="@string/info_icon"
+            android:src="@drawable/ic_information"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/noteUpdatedDateText"
+            app:layout_constraintTop_toBottomOf="@id/noteDate" />
+
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

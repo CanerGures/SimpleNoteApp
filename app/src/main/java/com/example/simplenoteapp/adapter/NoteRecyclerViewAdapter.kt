@@ -11,14 +11,20 @@ import com.example.simplenoteapp.R
 import com.example.simplenoteapp.model.dbmodel.NoteModel
 import kotlinx.android.synthetic.main.note_item.view.*
 
-class NoteRecyclerViewAdapter(val notes: MutableList<NoteModel> = mutableListOf()) :
+class NoteRecyclerViewAdapter(
+    val notes: MutableList<NoteModel> = mutableListOf(),
+    private val listener: (NoteModel) -> Unit
+) :
     RecyclerView.Adapter<NoteRecyclerViewAdapter.NotesViewHolder>() {
 
     inner class NotesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val noteTitle: TextView = itemView.noteTitle
         val noteText: TextView = itemView.noteText
         val noteDate: TextView = itemView.noteDate
+        val noteUpdatedDate: TextView = itemView.noteUpdatedDate
+        val noteUpdatedDateText: TextView = itemView.noteUpdatedDateText
         val noteImage: ImageView = itemView.noteImage
+        val updatedInfoIcon: ImageView = itemView.infoIcon
 
     }
 
@@ -33,12 +39,19 @@ class NoteRecyclerViewAdapter(val notes: MutableList<NoteModel> = mutableListOf(
         holder.noteTitle.text = currentItem.title
         holder.noteText.text = currentItem.description
         holder.noteDate.text = currentItem.createDate
+        if (currentItem.edited) {
+            holder.noteUpdatedDate.text = currentItem.updatedDate
+            holder.noteUpdatedDate.visibility = View.VISIBLE
+            holder.noteUpdatedDateText.visibility = View.VISIBLE
+            holder.updatedInfoIcon.visibility = View.VISIBLE
+        }
+
         Glide.with(holder.itemView.context)
             .load(currentItem.url)
             .fitCenter()
             .into(holder.noteImage)
 
-        itemClick(holder)
+        itemClick(holder, currentItem)
 
     }
 
@@ -46,9 +59,9 @@ class NoteRecyclerViewAdapter(val notes: MutableList<NoteModel> = mutableListOf(
         return notes.size
     }
 
-    private fun itemClick(holder: NotesViewHolder) {
+    private fun itemClick(holder: NotesViewHolder, currentItem: NoteModel) {
         holder.itemView.setOnClickListener {
-
+            listener(currentItem)
         }
     }
 }

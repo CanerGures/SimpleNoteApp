@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.CreateNoteFragment">
+    tools:context=".view.fragment.UpdateFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
 
 
         <LinearLayout
-            android:id="@+id/noteHeaderContainer"
+            android:id="@+id/noteHeaderContainerUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/noteHeader"
+                    android:id="@+id/noteHeaderUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -52,7 +52,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/noteDescriptionContainer"
+            android:id="@+id/noteDescriptionContainerUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -62,7 +62,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/noteHeaderContainer">
+            app:layout_constraintTop_toBottomOf="@id/noteHeaderContainerUpdate">
 
             <com.google.android.material.textfield.TextInputLayout
 
@@ -78,7 +78,7 @@
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/noteDescription"
+                    android:id="@+id/noteDescriptionUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:inputType="textMultiLine"
@@ -91,7 +91,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/noteImageUrlContainer"
+            android:id="@+id/noteImageUrlContainerUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -101,7 +101,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/noteDescriptionContainer">
+            app:layout_constraintTop_toBottomOf="@id/noteDescriptionContainerUpdate">
 
             <com.google.android.material.textfield.TextInputLayout
 
@@ -117,7 +117,7 @@
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/noteImageUrl"
+                    android:id="@+id/noteImageUrlUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -137,17 +137,33 @@
             app:layout_constraintGuide_percent=".3" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/noteAdd"
+            android:id="@+id/noteUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="86dp"
-            android:text="@string/add_note"
+            android:text="@string/update_note"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/noteDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="86dp"
+            android:text="@string/delete_note"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="@id/guideline5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </FrameLayout>

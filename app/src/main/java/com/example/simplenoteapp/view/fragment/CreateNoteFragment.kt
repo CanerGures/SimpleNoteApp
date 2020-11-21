@@ -1,4 +1,4 @@
-package com.example.simplenoteapp
+package com.example.simplenoteapp.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.example.simplenoteapp.R
 import com.example.simplenoteapp.model.dbmodel.NoteModel
 import com.example.simplenoteapp.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.fragment_create_note.*
@@ -38,7 +39,8 @@ class CreateNoteFragment : Fragment() {
                 noteDescription,
                 formatedDate,
                 false,
-                noteImageUrl
+                noteImageUrl,
+                null
             )
             createNote(noteModel)
 

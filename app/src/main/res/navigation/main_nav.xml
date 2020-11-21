@@ -7,20 +7,32 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.simplenoteapp.MainFragment"
+        android:name="com.example.simplenoteapp.view.fragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_createNoteFragment"
             app:destination="@id/createNoteFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/createNoteFragment"
-        android:name="com.example.simplenoteapp.CreateNoteFragment"
+        android:name="com.example.simplenoteapp.view.fragment.CreateNoteFragment"
         android:label="fragment_create_note"
         tools:layout="@layout/fragment_create_note">
         <action
             android:id="@+id/action_createNoteFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.simplenoteapp.view.fragment.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update">
+        <action
+            android:id="@+id/action_updateFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

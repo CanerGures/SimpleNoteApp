@@ -3,6 +3,7 @@ package com.example.simplenoteapp.model.dbmodel
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "note_data_table")
 data class NoteModel(
@@ -17,5 +18,7 @@ data class NoteModel(
     @ColumnInfo(name = "note_edited")
     val edited: Boolean,
     @ColumnInfo(name = "image_url")
-    val url: String
-)
+    val url: String,
+    @ColumnInfo(name = "note_updated_date")
+    val updatedDate: String?
+) : Serializable
