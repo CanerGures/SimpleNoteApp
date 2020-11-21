@@ -22,8 +22,11 @@ class CreateNoteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val rootView = inflater.inflate(R.layout.fragment_create_note, container, false)
+        this.activity?.overridePendingTransition(
+            R.anim.anim_enter,
+            R.anim.anim_leave
+        )
         val noteAdd: Button = rootView.findViewById(R.id.noteAdd)
         noteAdd.setOnClickListener {
             val noteTitle = noteHeader.text.toString()

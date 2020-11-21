@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/thePurple"
     tools:context=".view.activity.SplashActivity">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -15,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_fileName="note_anim.json"
-        app:lottie_repeatCount="4"
-        app:lottie_repeatMode="reverse" />
+        app:lottie_loop="true"
+        app:lottie_repeatMode="reverse"
+        app:lottie_speed="2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

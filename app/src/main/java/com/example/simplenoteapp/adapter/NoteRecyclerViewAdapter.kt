@@ -3,8 +3,10 @@ package com.example.simplenoteapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.simplenoteapp.R
@@ -25,6 +27,7 @@ class NoteRecyclerViewAdapter(
         val noteUpdatedDateText: TextView = itemView.noteUpdatedDateText
         val noteImage: ImageView = itemView.noteImage
         val updatedInfoIcon: ImageView = itemView.infoIcon
+        val parentCard: CardView = itemView.parentItemCard
 
     }
 
@@ -36,6 +39,9 @@ class NoteRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
         val currentItem = notes[position]
+        holder.parentCard.animation =
+            AnimationUtils.loadAnimation(holder.itemView.context, R.anim.anim_item_list)
+
         holder.noteTitle.text = currentItem.title
         holder.noteText.text = currentItem.description
         holder.noteDate.text = currentItem.createDate

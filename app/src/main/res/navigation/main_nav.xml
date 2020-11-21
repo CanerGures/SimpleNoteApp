@@ -12,10 +12,14 @@
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_createNoteFragment"
-            app:destination="@id/createNoteFragment" />
+            app:destination="@id/createNoteFragment"
+            app:enterAnim="@anim/anim_create_enter"
+            app:exitAnim="@anim/anim_create_leave" />
         <action
             android:id="@+id/action_mainFragment_to_updateFragment"
-            app:destination="@id/updateFragment" />
+            app:destination="@id/updateFragment"
+            app:enterAnim="@anim/anim_enter"
+            app:exitAnim="@anim/anim_leave" />
     </fragment>
     <fragment
         android:id="@+id/createNoteFragment"
@@ -24,7 +28,9 @@
         tools:layout="@layout/fragment_create_note">
         <action
             android:id="@+id/action_createNoteFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/anim_created_enter"
+            app:exitAnim="@anim/anim_created_leave" />
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
@@ -33,6 +39,7 @@
         tools:layout="@layout/fragment_update">
         <action
             android:id="@+id/action_updateFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/anim_updated_enter" />
     </fragment>
 </navigation>

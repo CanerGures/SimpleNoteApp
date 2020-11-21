@@ -16,9 +16,12 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_large"
             android:layout_marginBottom="@dimen/margin_large"
+            android:backgroundTint="@color/theYellow"
             android:contentDescription="@string/addfab"
+            android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/thePurple" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mainRv"
@@ -27,7 +30,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:pressedTranslationZ="12dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

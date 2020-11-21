@@ -34,6 +34,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:startIconDrawable="@drawable/ic_title"
+                app:boxStrokeColor="@color/theYellow"
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -75,6 +76,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:startIconDrawable="@drawable/ic_title"
+                app:boxStrokeColor="@color/theYellow"
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -114,6 +116,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:startIconDrawable="@drawable/ic_title"
+                app:boxStrokeColor="@color/theYellow"
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -142,6 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_button_bottom"
             android:text="@string/update_note"
+            android:textColor="@color/theYellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline5"
             app:layout_constraintStart_toStartOf="parent" />
@@ -154,6 +158,7 @@
             android:text="@string/delete_note"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/theYellow"
             app:layout_constraintStart_toStartOf="@id/guideline5" />
 
         <androidx.constraintlayout.widget.Guideline

@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:layout_margin="8dp"
-    android:backgroundTint="@color/purple_200"
+    android:id="@+id/parentItemCard"
     android:clickable="true"
     android:elevation="4dp"
     android:focusable="true"
+    android:backgroundTint="@color/thePurple"
     app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,6 +73,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_size_small"
             android:textStyle="bold"
+            android:textColor="@color/theYellow"
             app:layout_constraintBottom_toTopOf="@id/noteText"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@id/guideline2" />
@@ -86,6 +88,7 @@
             android:text="@string/lorem_ipsum"
             android:textAlignment="center"
             android:textSize="@dimen/text_size_small"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -121,6 +124,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_size_large"
             android:textStyle="bold"
+            android:textColor="@color/theYellow"
             app:layout_constraintBottom_toTopOf="@id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4" />
