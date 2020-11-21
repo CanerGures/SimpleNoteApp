@@ -12,7 +12,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         supportActionBar?.hide()
-        object : CountDownTimer(6000, 1000) {
+        object : CountDownTimer(4000, 1000) {
             override fun onFinish() {
                 this@SplashActivity extStartActivity MainActivity::class.java
             }

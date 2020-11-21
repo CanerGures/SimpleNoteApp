@@ -15,5 +15,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_fileName="note_anim.json"
+        app:lottie_repeatCount="4"
         app:lottie_repeatMode="reverse" />
 </androidx.constraintlayout.widget.ConstraintLayout>
