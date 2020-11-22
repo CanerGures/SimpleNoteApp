@@ -1,5 +1,6 @@
 package com.example.simplenoteapp.view.fragment
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.example.simplenoteapp.model.dbmodel.NoteModel
 import com.example.simplenoteapp.util.validateImageUrl
 import com.example.simplenoteapp.util.validateNoteCreate
 import com.example.simplenoteapp.viewmodel.NoteViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.fragment_update.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
@@ -46,59 +48,100 @@ class UpdateFragment : Fragment() {
 
 
             deleteNote(rootView)
-            updateNote(rootView)
+            updateNoteButton(rootView)
         }
 
         return rootView
     }
 
-    private fun deleteNote(rootView: View?) {
+    private fun deleteNote(rootView: View) {
         noteDelete.setOnClickListener {
-            homeViewModel.deleteNote(noteModel)
+            val materialAlert = MaterialAlertDialogBuilder(rootView.context)
+            materialAlert.setTitle("Alert")
+            materialAlert.setMessage("Do you want to delete this note?")
 
-            if (rootView != null) {
-                Navigation.findNavController(rootView)
-                    .navigate(R.id.action_updateFragment_to_mainFragment)
+            materialAlert.setPositiveButton(
+                "DELETE"
+            ) { dialogInterface: DialogInterface, i: Int ->
+                deleteNoteProcess(rootView)
+                dialogInterface.cancel()
             }
+            materialAlert.setNegativeButton(
+                "CANCEL"
+            ) { dialogInterface: DialogInterface, i: Int ->
+                dialogInterface.cancel()
+            }
+            materialAlert.show()
+
+
         }
     }
 
-    private fun updateNote(rootView: View?) {
+    private fun deleteNoteProcess(rootView: View) {
+        homeViewModel.deleteNote(noteModel)
+
+        Navigation.findNavController(rootView)
+            .navigate(R.id.action_updateFragment_to_mainFragment)
+    }
+
+    private fun updateNoteButton(rootView: View) {
         noteUpdate.setOnClickListener {
-            val noteTitle = noteHeaderUpdate.text.toString()
-            val noteDescription = noteDescriptionUpdate.text.toString()
-            val noteImageUrl = noteImageUrlUpdate.text.toString()
-            val date = Calendar.getInstance().time
-            val formatter = SimpleDateFormat.getDateTimeInstance()
-            val updatedDate = formatter.format(date)
-            val noteId = noteModel.noteId
-            val noteDate = noteModel.createDate
+            val materialAlert = MaterialAlertDialogBuilder(rootView.context)
+            materialAlert.setTitle("Alert")
+            materialAlert.setMessage("Do you want to update this note?")
 
-            val credentialCheck = validateNoteCreate(noteTitle, noteDescription)
-            val imageUrlCheck = validateImageUrl(noteImageUrl)
-            if (credentialCheck) {
-                val noteModel = NoteModel(
-                    noteId,
-                    noteTitle,
-                    noteDescription,
-                    noteDate,
-                    true,
-                    imageUrlCheck,
-                    updatedDate
-                )
-                homeViewModel.updateNote(noteModel)
-
-                if (rootView != null) {
-                    Navigation.findNavController(rootView)
-                        .navigate(R.id.action_updateFragment_to_mainFragment)
-                }
-            } else {
-                Toast.makeText(
-                    this.context,
-                    "Title and Note Description must not be empty, please check the entries.",
-                    Toast.LENGTH_LONG
-                ).show()
+            materialAlert.setPositiveButton(
+                "UPDATE"
+            ) { dialogInterface: DialogInterface, i: Int ->
+                updateNote(rootView)
+                dialogInterface.cancel()
             }
+            materialAlert.setNegativeButton(
+                "CANCEL"
+            ) { dialogInterface: DialogInterface, i: Int ->
+                dialogInterface.cancel()
+            }
+            materialAlert.show()
+
         }
+    }
+
+    private fun updateNote(rootView: View) {
+        val noteTitle = noteHeaderUpdate.text.toString()
+        val noteDescription = noteDescriptionUpdate.text.toString()
+        val noteImageUrl = noteImageUrlUpdate.text.toString()
+        val date = Calendar.getInstance().time
+        val formatter = SimpleDateFormat.getDateTimeInstance()
+        val updatedDate = formatter.format(date)
+        val noteId = noteModel.noteId
+        val noteDate = noteModel.createDate
+
+        val credentialCheck = validateNoteCreate(noteTitle, noteDescription)
+        val imageUrlCheck = validateImageUrl(noteImageUrl)
+        if (credentialCheck) {
+            val noteModel = NoteModel(
+                noteId,
+                noteTitle,
+                noteDescription,
+                noteDate,
+                true,
+                imageUrlCheck,
+                updatedDate
+            )
+            updateProcess(noteModel)
+
+            Navigation.findNavController(rootView)
+                .navigate(R.id.action_updateFragment_to_mainFragment)
+        } else {
+            Toast.makeText(
+                this.context,
+                "Title and Note Description must not be empty, please check the entries.",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    private fun updateProcess(noteModel: NoteModel) {
+        homeViewModel.updateNote(noteModel)
     }
 }
