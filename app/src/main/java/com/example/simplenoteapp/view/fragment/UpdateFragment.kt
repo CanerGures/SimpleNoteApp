@@ -56,17 +56,17 @@ class UpdateFragment : Fragment() {
     private fun deleteNote(rootView: View) {
         noteDelete.setOnClickListener {
             val materialAlert = MaterialAlertDialogBuilder(rootView.context)
-            materialAlert.setTitle("Alert")
-            materialAlert.setMessage("Do you want to delete this note?")
+            materialAlert.setTitle(rootView.context.getString(R.string.alert))
+            materialAlert.setMessage(rootView.context.getString(R.string.want_to_delete))
 
             materialAlert.setPositiveButton(
-                "DELETE"
+                rootView.context.getString(R.string.delete)
             ) { dialogInterface: DialogInterface, i: Int ->
                 deleteNoteProcess(rootView)
                 dialogInterface.cancel()
             }
             materialAlert.setNegativeButton(
-                "CANCEL"
+                rootView.context.getString(R.string.cancel)
             ) { dialogInterface: DialogInterface, i: Int ->
                 dialogInterface.cancel()
             }
@@ -85,17 +85,17 @@ class UpdateFragment : Fragment() {
     private fun updateNoteButton(rootView: View) {
         noteUpdate.setOnClickListener {
             val materialAlert = MaterialAlertDialogBuilder(rootView.context)
-            materialAlert.setTitle("Alert")
-            materialAlert.setMessage("Do you want to update this note?")
+            materialAlert.setTitle(rootView.context.getString(R.string.alert))
+            materialAlert.setMessage(rootView.context.getString(R.string.want_to_update))
 
             materialAlert.setPositiveButton(
-                "UPDATE"
+                rootView.context.getString(R.string.update)
             ) { dialogInterface: DialogInterface, i: Int ->
                 updateNote(rootView)
                 dialogInterface.cancel()
             }
             materialAlert.setNegativeButton(
-                "CANCEL"
+                rootView.context.getString(R.string.cancel)
             ) { dialogInterface: DialogInterface, i: Int ->
                 dialogInterface.cancel()
             }
@@ -126,20 +126,20 @@ class UpdateFragment : Fragment() {
                 imageUrlCheck,
                 updatedDate
             )
-            updateProcess(noteModel)
+            updateNoteProcess(noteModel)
 
             Navigation.findNavController(rootView)
                 .navigate(R.id.action_updateFragment_to_mainFragment)
         } else {
             Toast.makeText(
                 this.context,
-                "Title and Note Description must not be empty, please check the entries.",
+                rootView.context.getString(R.string.error_update),
                 Toast.LENGTH_LONG
             ).show()
         }
     }
 
-    private fun updateProcess(noteModel: NoteModel) {
+    private fun updateNoteProcess(noteModel: NoteModel) {
         homeViewModel.updateNote(noteModel)
     }
 }

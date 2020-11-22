@@ -34,25 +34,25 @@ class CreateNoteFragment : Fragment() {
             R.anim.anim_leave
         )
         noteAdd = rootView.findViewById(R.id.noteAdd)
-        createNote(rootView)
+        createNoteButton(rootView)
         return rootView
     }
 
-    private fun createNote(rootView: View?) {
+    private fun createNoteButton(rootView: View?) {
         noteAdd.setOnClickListener {
 
             val materialAlert = MaterialAlertDialogBuilder(rootView!!.context)
-            materialAlert.setTitle("Alert")
-            materialAlert.setMessage("Do you want to add this note?")
+            materialAlert.setTitle(rootView.context.getString(R.string.alert))
+            materialAlert.setMessage(rootView.context.getString(R.string.want_to_add))
 
             materialAlert.setPositiveButton(
-                "ADD"
+                rootView.context.getString(R.string.add)
             ) { dialogInterface: DialogInterface, i: Int ->
-                addNote(rootView)
+                createNote(rootView)
                 dialogInterface.cancel()
             }
             materialAlert.setNegativeButton(
-                "CANCEL"
+                rootView.context.getString(R.string.cancel)
             ) { dialogInterface: DialogInterface, i: Int ->
                 dialogInterface.cancel()
             }
@@ -61,7 +61,7 @@ class CreateNoteFragment : Fragment() {
         }
     }
 
-    private fun addNote(rootView: View?) {
+    private fun createNote(rootView: View?) {
 
         val noteTitle = noteHeader.text.toString()
         val noteDescription = noteDescription.text.toString()
@@ -88,7 +88,7 @@ class CreateNoteFragment : Fragment() {
         } else {
             Toast.makeText(
                 this.context,
-                "Title and Note Description must not be empty, please check the entries.",
+                rootView!!.context.getString(R.string.want_to_add),
                 Toast.LENGTH_LONG
             ).show()
         }

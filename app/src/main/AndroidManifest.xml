@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleNoteApp">
         <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.SplashActivity">
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
