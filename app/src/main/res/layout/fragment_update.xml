@@ -75,7 +75,7 @@
                 app:boxCornerRadiusTopStart="@dimen/margin_normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:startIconDrawable="@drawable/ic_title"
+                app:startIconDrawable="@drawable/ic_description"
                 app:boxStrokeColor="@color/theYellow"
                 app:startIconTint="@color/purple_200">
 
@@ -115,7 +115,7 @@
                 app:boxStrokeColor="@color/theYellow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:startIconDrawable="@drawable/ic_title"
+                app:startIconDrawable="@drawable/ic_image"
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText

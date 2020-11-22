@@ -35,8 +35,6 @@ class MainFragment : Fragment() {
                 .navigate(R.id.action_mainFragment_to_updateFragment, bundle)
         }
 
-
-
         homeViewModel.getAllNotes().observe(viewLifecycleOwner, {
             with(noteAdapter) {
                 if (notes.size == 0) {
@@ -51,7 +49,6 @@ class MainFragment : Fragment() {
         recycView = rootView.findViewById(R.id.mainRv)
         recycView.adapter = noteAdapter
         recycView.layoutManager = LinearLayoutManager(rootView.context)
-
 
         addFabOnClick(rootView)
 

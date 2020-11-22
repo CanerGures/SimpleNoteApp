@@ -46,7 +46,6 @@ class UpdateFragment : Fragment() {
             descriptionUpdate.text = noteModel.description
             imageUpdate.text = noteModel.url
 
-
             deleteNote(rootView)
             updateNoteButton(rootView)
         }
@@ -72,7 +71,6 @@ class UpdateFragment : Fragment() {
                 dialogInterface.cancel()
             }
             materialAlert.show()
-
 
         }
     }
