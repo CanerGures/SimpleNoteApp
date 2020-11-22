@@ -12,6 +12,10 @@ Users can:
 - See the date which is added after note update.
 
 ## Screen Shots📱
+<p><img height= "350" src="https://media.giphy.com/media/2aVvMQ6etiHJAc7C7B/giphy.gif" alt="Gif1" />
+<img height= "350" src="https://media.giphy.com/media/tIQFQ9MQLfIaRdrEmU/giphy.gif" alt="Gif2" />
+<img height= "350" src="https://media.giphy.com/media/KLrAqs8O1q6g0J6scL/giphy.gif" alt="Gif3" />
+<img height= "350" src="https://media.giphy.com/media/a2wKRyW4bhgOCxKFg0/giphy.gif" alt="Gif4" /></p>
 
 ## Built With 🚧
 <code><img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-ar21.svg"></code>
