@@ -2,13 +2,23 @@
 <a href="https://android-arsenal.com/api?level=21"><img src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat" alt="API" /></a>
 
 # SimpleNoteApp
-An app for keeping notes on the phone.
+An app for keeping notes on the phone. Application capabilities ->
+
+Users can:
+- Create a new Note
+- Inspect the created notes in main screen
+- Update/Delete the notes
+- See the date of creation of the note
+- See the date which is added after note update.
 
 ## Screen Shots📱
 
 ## Built With 🚧
 <code><img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-ar21.svg"></code>
 <code><img src="https://www.vectorlogo.zone/logos/android/android-ar21.svg"></code>
+
+## Flow Chart
+<p><img height= "600" width="700" src="https://i.imgur.com/S09AxyE.png" alt="Gif4" /></p>
 
 ## Unit Tests (JUnit4) 
 <code><img src="https://i.imgur.com/ZhmikUi.png"></code>
