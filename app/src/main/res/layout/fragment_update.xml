@@ -41,7 +41,7 @@
                     android:id="@+id/noteHeaderUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
+                    android:inputType="textCapSentences"
                     android:maxLines="1"
                     android:minLines="1"
                     android:textColor="@color/purple_200"
@@ -99,7 +99,6 @@
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_normal"
             android:layout_marginEnd="@dimen/margin_normal"
-            android:layout_marginBottom="@dimen/margin_small"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,10 +112,10 @@
                 android:hint="@string/note_image_url"
                 app:boxCornerRadiusTopEnd="@dimen/margin_normal"
                 app:boxCornerRadiusTopStart="@dimen/margin_normal"
+                app:boxStrokeColor="@color/theYellow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:startIconDrawable="@drawable/ic_title"
-                app:boxStrokeColor="@color/theYellow"
                 app:startIconTint="@color/purple_200">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -137,29 +136,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".3" />
+            app:layout_constraintGuide_percent=".2" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/noteUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="87dp"
             android:layout_marginBottom="@dimen/margin_button_bottom"
             android:text="@string/update_note"
             android:textColor="@color/theYellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noteImageUrlContainerUpdate" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/noteDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="87dp"
             android:layout_marginBottom="@dimen/margin_button_bottom"
             android:text="@string/delete_note"
+            android:textColor="@color/theYellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/theYellow"
-            app:layout_constraintStart_toStartOf="@id/guideline5" />
+            app:layout_constraintStart_toStartOf="@id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/noteImageUrlContainerUpdate" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"

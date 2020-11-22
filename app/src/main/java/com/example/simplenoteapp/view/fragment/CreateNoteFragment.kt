@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.simplenoteapp.R
 import com.example.simplenoteapp.model.dbmodel.NoteModel
+import com.example.simplenoteapp.util.validateImageUrl
 import com.example.simplenoteapp.util.validateNoteCreate
 import com.example.simplenoteapp.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.fragment_create_note.*
@@ -38,6 +39,7 @@ class CreateNoteFragment : Fragment() {
             val formatter = SimpleDateFormat.getDateTimeInstance()
             val formatedDate = formatter.format(date)
             val credentialCheck = validateNoteCreate(noteTitle, noteDescription)
+            val imageUrlCheck = validateImageUrl(noteImageUrl)
             if (credentialCheck) {
                 val noteModel = NoteModel(
                     null,
@@ -45,7 +47,7 @@ class CreateNoteFragment : Fragment() {
                     noteDescription,
                     formatedDate,
                     false,
-                    noteImageUrl,
+                    imageUrlCheck,
                     null
                 )
                 createNote(noteModel)

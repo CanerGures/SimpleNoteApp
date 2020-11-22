@@ -16,3 +16,20 @@ fun validateNoteCreate(
     return !(TextUtils.isEmpty(title)) && !(TextUtils.isEmpty(note))
 
 }
+
+fun validateImageUrl(
+    url: String?
+
+): String {
+
+    return if (url != "") {
+        val checkHTTPS = url!!.take(8)
+        if (checkHTTPS == "https://") {
+            url
+        } else {
+            "https://${url}"
+        }
+    } else {
+        url
+    }
+}
