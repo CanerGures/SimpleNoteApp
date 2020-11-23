@@ -23,8 +23,8 @@ The architecture of the app is MVVM+Repo+Roomdb as Google advised. Update, delet
 <code><img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-ar21.svg"></code>
 <code><img src="https://www.vectorlogo.zone/logos/android/android-ar21.svg"></code>
 
-## Flow Chart
-<p><img height= "600" width="700" src="https://i.imgur.com/FjWUWtW.png" alt="Gif4" /></p>
+## Flow Diagram
+<p><img height= "600" width="900" src="https://i.imgur.com/FSvjtL6.png" alt="Gif4" /></p>
 
 ## Unit Tests (JUnit4) 
 <code><img src="https://i.imgur.com/ZhmikUi.png"></code>
