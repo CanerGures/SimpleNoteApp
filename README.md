@@ -46,6 +46,6 @@ The architecture of the app is MVVM+Repo+Roomdb as Google advised. Update, delet
 
 
 ## Architecture📃
-The app uses MVVM [Model-View-ViewModel] and Repository architecture to have a unidirectional flow of data, separation of concern, and a lot morewhich is recommended by Google itself.
+The app uses MVVM [Model-View-ViewModel] and Repository architecture to have a unidirectional flow of data, separation of concern, and a lot more which is recommended by Google itself.
 
 ![Architecture](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
