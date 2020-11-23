@@ -13,7 +13,7 @@ fun validateNoteCreate(
     note: String,
 ): Boolean {
 
-    return !(TextUtils.isEmpty(title)) && !(TextUtils.isEmpty(note))
+    return title.isNotEmpty() && note.isNotEmpty()
 
 }
 
