@@ -27,7 +27,7 @@ The architecture of the app is MVVM+Repo+Roomdb as Google advised. Update, delet
 <p><img height= "600" width="900" src="https://i.imgur.com/FSvjtL6.png" alt="Gif4" /></p>
 
 ## Unit Tests (JUnit4) 
-<code><img src="https://i.imgur.com/ZhmikUi.png"></code>
+<code><img src="https://i.imgur.com/9WPDzf1.png"></code>
 
 ## Libraries and Tools 🛠
 
